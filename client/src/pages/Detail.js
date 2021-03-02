@@ -55,6 +55,11 @@ function Detail() {
         type: UPDATE_CART_QUANTITY,
         _id: id,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+      }); 
+
+      idbPromise('cart', 'put', {
+        ...itemInCart, 
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
       })
     }
     else {
@@ -62,6 +67,8 @@ function Detail() {
         type: ADD_TO_CART,
         product: { ...currentProduct, purchaseQuantity: 1 }
       });
+
+      idbPromise('cart', 'put', { ...currentProduct, purchaseQuantity: 1 }); 
     }
   };
 
@@ -69,7 +76,9 @@ function Detail() {
     dispatch({
       type: REMOVE_FROM_CART, 
       _id: currentProduct._id
-    })
+    });
+
+    idbPromise('cart', 'delete', { ...currentProduct }); 
   }
 
   return (

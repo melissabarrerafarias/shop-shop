@@ -9,7 +9,6 @@ import {
     CLEAR_CART,
     TOGGLE_CART
 } from './actions';
-// import { useReducer } from 'react';
 const initialState = {
     products: [],
     cart: [],
@@ -92,7 +91,3 @@ const reducer = (state=initialState, action) => {
 };
 
 export default reducer; 
-
-// export function useProductReducer(initialState) {
-//     return useReducer(reducer, initialState);
-// }

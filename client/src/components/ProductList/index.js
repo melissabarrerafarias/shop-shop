@@ -3,7 +3,6 @@ import { useQuery } from '@apollo/react-hooks';
 import ProductItem from "../ProductItem";
 import { QUERY_PRODUCTS } from "../../utils/queries";
 import spinner from "../../assets/spinner.gif"; 
-// import { useStoreContext } from '../../utils/GlobalState'; 
 import { UPDATE_PRODUCTS } from '../../utils/actions'; 
 import { idbPromise } from '../../utils/helpers'; 
 import { useDispatch, useSelector } from 'react-redux';
